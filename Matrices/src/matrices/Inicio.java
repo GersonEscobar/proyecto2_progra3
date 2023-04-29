@@ -6,15 +6,16 @@ import java.util.Scanner;
 
 public class Inicio {
 
+    static Matriz matriz;
     public static void main(String[] args) {
 
-        Matriz matriz = new Matriz();
+        matriz = new Matriz();
 
-        menu(matriz);
+        menu();
 
     }
 
-    public static void menu(Matriz matriz) {
+    public static void menu() {
 
         Scanner scanner = new Scanner(System.in);
         int opcion = 0;
@@ -27,15 +28,16 @@ public class Inicio {
 
 
         if(opcion==1){
-        insertarNodo(matriz);
+        insertarNodo();
         }else if(opcion==2) {
-        buscarNodo(matriz);
+        buscarNodo();
         }else if (opcion==3) {
-        eliminarNodo(matriz);
+        eliminarNodo();
         }
+        scanner.close();
     }
 
-    public static void insertarNodo(Matriz matriz) {
+    public static void insertarNodo() {
 
         Scanner scanner = new Scanner(System.in);
         String respuesta = "";
@@ -66,11 +68,12 @@ public class Inicio {
         } while (respuesta.equalsIgnoreCase("s"));
 
         if (respuesta.equalsIgnoreCase("n")) {
-            menu(matriz);
+            menu();
         }
+        scanner.close();
     }
 
-    public static void buscarNodo(Matriz matriz) {
+    public static void buscarNodo() {
 
         Scanner scanner = new Scanner(System.in);
         int modelo = 0;
@@ -145,11 +148,12 @@ public class Inicio {
         } while (respuesta.equalsIgnoreCase("s"));
 
         if (respuesta.equalsIgnoreCase("n")) {
-            menu(matriz);
+            menu();
         }
+        scanner.close();
     }
 
-    public static void eliminarNodo(Matriz matriz) {
+    public static void eliminarNodo() {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -219,8 +223,9 @@ public class Inicio {
         } while (respuesta.equalsIgnoreCase("s"));
 
         if (respuesta.equalsIgnoreCase("n")) {
-            menu(matriz);
+            menu();
         }
+        scanner.close();
     }
 
 }
